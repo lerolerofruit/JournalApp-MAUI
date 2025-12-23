@@ -1,0 +1,10 @@
+<ContentPage
+    x:Class="JournalApp_MAUI.Views.CalendarPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Padding="20">
+        <DatePicker DateSelected="OnDateSelected" />
+    </VerticalStackLayout>
+
+</ContentPage>

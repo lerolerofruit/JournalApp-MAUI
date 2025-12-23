@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-
+using JournalApp_MAUI.Services;
 namespace JournalApp_MAUI
+    
 {
     public static class MauiProgram
     {
@@ -20,7 +21,8 @@ namespace JournalApp_MAUI
     		builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
-
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "journal.db");
+            builder.Services.AddSingleton(new DatabaseService(dbPath));
             return builder.Build();
         }
     }

@@ -1,15 +1,15 @@
-﻿namespace JournalApp_MAUI
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿using JournalApp_MAUI.Services;
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new MainPage()) { Title = "JournalApp MAUI" };
-        }
+namespace JournalApp_MAUI;
+
+public partial class App : Application
+{
+    public static DatabaseService Database { get; private set; }
+
+    public App(DatabaseService database)
+    {
+        InitializeComponent();
+        Database = database;
+        MainPage = new AppShell();
     }
 }
